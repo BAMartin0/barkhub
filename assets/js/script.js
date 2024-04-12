@@ -1,12 +1,23 @@
-const url = 'https://api.api-ninjas.com/v1/dogs?shedding=1&barking=1&energy=3'
-
-fetch(url, {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": 'hAdradsYY5MNK6u7ypry0Q == ZUDeF8Ux1ilWg4EP',
-    "X-RapidAPI-Host": "famous-quotes4.p.rapidapi.com",
-  },
-})
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((err) => console.error(err));
+function fetchDogs() {
+    const apiKey = '+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej'; // Replace with your API key
+    const energy = document.getElementById('energy').value;
+    const shedding = document.getElementById('shedding').value;
+    const weight = document.getElementById('weight').value;
+    const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&min_weight=${weight}`;
+    // var name = 'golden retriever'
+    $.ajax({
+        method: 'GET',
+        url: url,
+        headers: { 'X-Api-Key': '+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result);
+            if (result.length === 0){
+                console.log("Nah B guess again");
+            }
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+    });
+}
