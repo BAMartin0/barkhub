@@ -1,8 +1,14 @@
+//      * const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&min_weight=${weight}`;
+
 function fetchDogs() {
     const apiKey = '+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej'; // Replace with your API key
     const energy = document.getElementById('energy').value;
     const shedding = document.getElementById('shedding').value;
     const weight = document.getElementById('weight').value;
+    //const barking = document.getElementById('barking').value;
+     //const temperment = document.getElementById('temperment').value;
+    //const playfulness = document.getElementById('playfulness').value;
+    //const protectiveness = document.getElementById('protectiveness').value;
     const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&min_weight=${weight}`;
     // var name = 'golden retriever'
     $.ajax({
