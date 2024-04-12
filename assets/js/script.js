@@ -3,21 +3,28 @@ function fetchDogs() {
     const energy = document.getElementById('energy').value;
     const shedding = document.getElementById('shedding').value;
     const weight = document.getElementById('weight').value;
+    const barking = document.getElementById('barking').value;
+    const protectiveness = document.getElementById('protectiveness').value;
+    
     const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&min_weight=${weight}`;
     // var name = 'golden retriever'
-    $.ajax({
-        method: 'GET',
-        url: url,
-        headers: { 'X-Api-Key': '+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej'},
-        contentType: 'application/json',
-        success: function(result) {
+  var xhr = new XMLHttpRequest();
+var url2 = "your_url_here";
+xhr.open("GET", url, true);
+xhr.setRequestHeader("X-Api-Key", "+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej");
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+            var result = JSON.parse(xhr.responseText);
             console.log(result);
-            if (result.length === 0){
+            if (result.length === 0) {
                 console.log("Nah B guess again");
             }
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
+        } else {
+            console.error('Error: ', xhr.responseText);
         }
-    });
+    }
+};
+xhr.send();
 }
