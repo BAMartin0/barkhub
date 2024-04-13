@@ -1,4 +1,3 @@
-
 function fetchDogs() {
     const apiKey = '+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej'; // Replace with your API key
     const energy = document.getElementById('energy').value;
