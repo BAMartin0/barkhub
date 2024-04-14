@@ -77,3 +77,81 @@ body {
   width: 250px;
   }
 }
+
+/* match.html styling start */
+
+.header-container {
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  padding: 20px 0;
+  border: 5px solid white; /* Add border */
+  border-radius: 10px; /* Add border radius for rounded corners */
+}
+
+
+#container {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 22px;
+  background-color: white;
+  display: flex;
+  padding: 50px;
+  margin: 0 auto;
+  width: 80%;
+  height: 90%;
+  border: 10px rgb(234, 14, 54) solid;
+  border-radius: 30px;
+}
+
+#sideNav {
+  margin-right: 30px;
+}
+
+#sideNav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sideNav ul li {
+  margin-bottom: 10px;
+}
+
+#sideNav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+#sideNav ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+#currentMatch {
+  flex-grow: 1;
+}
+
+#currentMatchTitle {
+  font-size: 50px;
+  text-align: center;
+}
+
+#matchDetails {
+  /* Style current match details */
+}
+
+header {
+  background-color: black;
+  color: yellow;
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+.highlight {
+  color: yellow;
+}
