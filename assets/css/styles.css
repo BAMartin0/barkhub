@@ -39,3 +39,41 @@ body {
   font-size: 50px;
   text-align: center;
 }
+
+@media screen and (max-width: 992px) {
+  #dogImg {
+    width: 50%;
+    height: 50%;
+  }
+  #dogForm {
+    display: inline;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #dogImg {
+    display: inline;
+    width: 25%;
+    height: 25%;
+   
+  }
+  #dogForm {
+    display: inline;
+    float: left;
+    width: 25%;
+    height: 25%;
+    position: relative;
+  }
+}
+@media screen and (max-width: 559px) {
+  #dogImg {
+    width: 208px;
+    height: 218px;
+  }
+  #dogForm {
+    position: relative;
+  right: 200px;
+  top: 10px;
+  width: 250px;
+  }
+}
