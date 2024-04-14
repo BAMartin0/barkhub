@@ -6,8 +6,8 @@ function fetchDogs() {
     const barking = document.getElementById('barking').value;
     const protectiveness = document.getElementById('protectiveness').value;
 
-    const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&min_weight=${weight}&barking=${barking}&protectiveness=${protectiveness}`;
-
+    const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&max_weight=${weight}&barking=${barking}&protectiveness=${protectiveness}`;
+// changed min_weight to max_weight
     var xhr = new XMLHttpRequest();
     var url2 = "your_url_here";
     xhr.open("GET", url, true);
