@@ -20,7 +20,12 @@ function fetchDogs() {
             console.log(result);
             if (result.length === 0) {
                 console.log("Nah B guess again");
-            }
+            } else {
+                    const matchedArray = JSON.parse(localStorage.getItem("matchedArray")) || [];
+                    matchedArray.push(result[0]);
+                    console.log("Updated matchedArray:", matchedArray);
+                    localStorage.setItem("matchedArray", JSON.stringify(matchedArray));
+                }
         } else {
             console.error('Error: ', xhr.responseText);
         }
@@ -28,3 +33,4 @@ function fetchDogs() {
 };
 xhr.send();
 }
+
