@@ -23,17 +23,25 @@ function fetchDogs() {
         } else {
           const randomIndex = Math.floor(Math.random() * result.length);
           const randomResult = result[randomIndex];
+
           console.log("Random result:", randomResult);
+
           const matchedArray =
             JSON.parse(localStorage.getItem("matchedArray")) || [];
-          matchedArray.push(result.random);
-          // console.log("Updated matchedArray:", matchedArray);
+          const dogData = {
+            image_link: randomResult.image_link,
+            name: randomResult.name,
+          };
+
+          matchedArray.push(dogData);
+
           localStorage.setItem("matchedArray", JSON.stringify(matchedArray));
         }
       } else {
         console.error("Error: ", xhr.responseText);
       }
     }
+    window.location.href = "match.html"; //moved up and now site works!
   };
-  xhr.send();
+    xhr.send();
 }
