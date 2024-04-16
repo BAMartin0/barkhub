@@ -7,30 +7,30 @@ function fetchDogs() {
     const protectiveness = document.getElementById('protectiveness').value;
 
     const url = `https://api.api-ninjas.com/v1/dogs?energy=${energy}&shedding=${shedding}&max_weight=${weight}&barking=${barking}&protectiveness=${protectiveness}`;
-// changed min_weight to max_weight
+    // changed min_weight to max_weight
     var xhr = new XMLHttpRequest();
     var url2 = "your_url_here";
     xhr.open("GET", url, true);
     xhr.setRequestHeader("X-Api-Key", "+SZxtNXiFqfl0H6PZw8wVQ==v7XBFa53qMupptej");
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-            var result = JSON.parse(xhr.responseText);
-            console.log(result);
-            if (result.length === 0) {
-                console.log("Nah B guess again");
-            } else {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var result = JSON.parse(xhr.responseText);
+                console.log(result);
+                if (result.length === 0) {
+                    // Show an alert with the error message
+                    alert("Nah B guess again");
+                } else {
                     const matchedArray = JSON.parse(localStorage.getItem("matchedArray")) || [];
                     matchedArray.push(result[0]);
                     console.log("Updated matchedArray:", matchedArray);
                     localStorage.setItem("matchedArray", JSON.stringify(matchedArray));
                 }
-        } else {
-            console.error('Error: ', xhr.responseText);
+            } else {
+                console.error('Error: ', xhr.responseText);
+            }
         }
-    }
-};
-xhr.send();
+    };
+    xhr.send();
 }
-
