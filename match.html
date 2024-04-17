@@ -8,27 +8,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-<body>
+<body >
   <header class="header-container">
-    <h1>Bark<span class="highlight">HUB</span></h1>
-    <button class="button is-primary" id="backButton">Back</button>
+    <h1 class="has-text-danger is-size-1 has-text-weight-bold">Bark<span class="highlight">HUB</span></h1>
+    <button class="button is-primary" id="backButton">Add Another</button>
   </header>
 
 
   <!-- Dog Matches Current and Saved -->
   
   <section class="sectionResults">
-    <div class="container">
+    <div class="container has-text-light">
       <div class="columns">
         <div class="column is-3 has-text-centered">
-          <h1 class="title">Matches</h1>
+          <h1 class="title has-text-light mt-5">Matches</h1>
             <div id="previousMatchContainer"></div>
             <button class="button is-danger" id="clearPreviousMatches">Clear Previous Matches</button>
 
         </div>
 
     <div class="column is-8 has-text-centered">
-      <h1 class="title">Your Dog!!</h1>
+      <h1 class="title has-text-light mt-5">You've Met Your Match!</h1>
           <div id="currentMatchContainer"></div>
       </div>
 
