@@ -19,7 +19,7 @@ function fetchDogs() {
         var result = JSON.parse(xhr.responseText);
         console.log(result);
         if (result.length === 0) {
-          console.log("Nah B guess again");
+          alert("Nah B guess again");
         } else {
           const randomIndex = Math.floor(Math.random() * result.length);
           const randomResult = result[randomIndex];
@@ -36,12 +36,13 @@ function fetchDogs() {
           matchedArray.push(dogData);
 
           localStorage.setItem("matchedArray", JSON.stringify(matchedArray));
+
+          window.location.href = "match.html"; //moved up within else statement and now error button only triggers if length is 0
         }
       } else {
         console.error("Error: ", xhr.responseText);
       }
     }
-    window.location.href = "match.html"; //moved up and now site works!
   };
     xhr.send();
 }
