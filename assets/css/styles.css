@@ -155,3 +155,18 @@ h1 {
 .highlight {
   color: yellow;
 }
+
+.bottom-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}

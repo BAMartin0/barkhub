@@ -72,23 +72,39 @@
 
     </section>
     
-    <div id="fact-text">
-      <script>
-        function fetchRandomDogFact() {
-            fetch('https://dogapi.dog/api/v1/facts?number=1')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('fact-text').textContent = data.facts[0]
-            })
-            .catch(error => {
-                console.error('Error fetching random dog fact:', error);
-                document.getElementById('fact-text').textContent = 'Failed to fetch the fact.';
-            });
-        }
-
-        window.onload = fetchRandomDogFact;
-    </script>
+    <div id="fact-text" class="message bottom-fixed">
+    <div class="message-header">
+        <p class="is-pulled-left">Did you know?</p>
     </div>
+    <div class="message-body" id="fact-text-body">
+    </div>
+</div>
+
+<script>
+    function fetchRandomDogFact() {
+        fetch('https://dogapi.dog/api/v1/facts?number=1')
+        .then(response => response.json())
+        .then(data => {
+            // Update the content of the message body
+            const factTextBody = document.getElementById('fact-text-body');
+            factTextBody.innerHTML = `
+                <div class="content">
+                    <p>${data.facts[0]}</p>
+                </div>`;
+        })
+        .catch(error => {
+            console.error('Error fetching random dog fact:', error);
+            // Update the content of the message body in case of an error
+            document.getElementById('fact-text-body').innerHTML = `
+                <div class="content">
+                    <p>Failed to fetch the fact.</p>
+                </div>`;
+        });
+    }
+
+    // Call the function to fetch random dog fact when the page loads
+    window.onload = fetchRandomDogFact;
+</script>
    
 
     <script
