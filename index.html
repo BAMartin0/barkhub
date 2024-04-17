@@ -6,8 +6,9 @@
     <title>BarkHUB</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+
   </head>
   
   <body>
@@ -16,9 +17,9 @@
     <img id= dogImg src="./assets/images/dogwoofing.png" alt="">
     
     <section id="dogForm">   
-      <h1 id="dogFormTitle">BarkHUB</h1>
+      <h1 id="dogFormTitle" class=" is-size-1 has-text-weight-bold">BarkHUB</h1>
       <p>Fill out the form to be matched with the perfect dog for you! </p>
-      <label for="energy">Energy:</label>
+      <label for="energy">Energy: </label>
       <select id="energy">
          <option value="1">1</option>
         <option value="2">2</option>
@@ -59,6 +60,15 @@
       <input type="number" id="weight" min="0" /><br /> 
       <button id="matchButton">Match Me</button>
 
+<div id="noDogsModal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <p>No dogs found. Please edit your selections and try again.</p>
+      <button id= "tryAgainButton" class="button is-info">Try Again</button>
+    </div>
+  </div>
+</div>
 
     </section>
     
