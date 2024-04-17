@@ -35,3 +35,20 @@ function displayDog(dog, container) {
 }
 
 displayMatchedDogs();
+
+document.getElementById('clearPreviousMatches').addEventListener('click', function() {
+  const previousMatchContainer = document.getElementById('previousMatchContainer');
+  previousMatchContainer.innerHTML = ''; // Clear the contents of the container
+
+  // clear the contents from local storage
+  const matchedArray = JSON.parse(localStorage.getItem("matchedArray")) || [];
+  if (matchedArray.length > 1) {
+    // Remove all except the latest match
+    const newMatchedArray = [matchedArray[matchedArray.length - 1]];
+    localStorage.setItem('matchedArray', JSON.stringify(newMatchedArray));
+  }
+});
+// back button functionality
+document.getElementById('backButton').addEventListener('click', function() {
+  window.history.back(); // Go back in the browser history
+});
