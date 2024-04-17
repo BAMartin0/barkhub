@@ -54,3 +54,34 @@ function fetchDogs() {
   xhr.send();
 }
 
+function isOverlappingWithSubmit() {
+  const messageContainer = document.getElementById('fact-text');
+  const submitButton = document.getElementById('matchButton');
+
+  const messageRect = messageContainer.getBoundingClientRect();
+  const submitRect = submitButton.getBoundingClientRect();
+
+  return (
+      messageRect.bottom > submitRect.top &&
+      messageRect.top < submitRect.bottom &&
+      messageRect.right > submitRect.left &&
+      messageRect.left < submitRect.right
+  );
+}
+
+// Function to hide the message container if it overlaps with the submit button
+function adjustMessageContainerVisibility() {
+  const messageContainer = document.getElementById('fact-text');
+  const submitButton = document.getElementById('matchbutton');
+
+  if (isOverlappingWithSubmit()) {
+      messageContainer.style.display = 'none'; // Hide the message container if it overlaps with the submit button
+  } else {
+      messageContainer.style.display = 'block'; // Show the message container if it doesn't overlap
+  }
+}
+
+// Call the adjustMessageContainerVisibility function whenever necessary
+// For example, you can call it on window resize or scroll events
+window.addEventListener('resize', adjustMessageContainerVisibility);
+window.addEventListener('scroll', adjustMessageContainerVisibility);
