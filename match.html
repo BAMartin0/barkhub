@@ -5,21 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dog Matcher Results</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body>
   <header class="header-container">
     <h1>Bark<span class="highlight">HUB</span></h1>
+    <button class="button is-primary" id="backButton">Back</button>
   </header>
-  <div id="container">
-    
-    <div id="currentMatch">
-      <h1 id="currentMatchTitle">Current Match</h1>
-      <div id="matchContainer">
-        <!-- Display current match details here -->
+
+
+  <!-- Dog Matches Current and Saved -->
+  
+  <section class="sectionResults">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-3 has-text-centered">
+          <h1 class="title">Matches</h1>
+            <div id="previousMatchContainer"></div>
+            <button class="button is-danger" id="clearPreviousMatches">Clear Previous Matches</button>
+
+        </div>
+
+    <div class="column is-8 has-text-centered">
+      <h1 class="title">Your Dog!!</h1>
+          <div id="currentMatchContainer"></div>
       </div>
+
     </div>
-  </div>
+  </section>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="./assets/js/match.js"></script>
