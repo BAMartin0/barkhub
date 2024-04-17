@@ -62,8 +62,24 @@
 
     </section>
     
-    <!-- <div id="dogs"></div> -->
-    <!-- what does this div do? -->
+    <div id="fact-text">
+      <script>
+        function fetchRandomDogFact() {
+            fetch('https://dogapi.dog/api/v1/facts?number=1')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('fact-text').textContent = data.facts[0]
+            })
+            .catch(error => {
+                console.error('Error fetching random dog fact:', error);
+                document.getElementById('fact-text').textContent = 'Failed to fetch the fact.';
+            });
+        }
+
+        window.onload = fetchRandomDogFact;
+    </script>
+    </div>
+   
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
