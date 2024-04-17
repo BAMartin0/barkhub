@@ -1,24 +1,31 @@
 function displayMatchedDogs() {
-  // Retrieve matched data from local storage
+  
   const matchedArray = JSON.parse(localStorage.getItem("matchedArray")) || [];
   const dogContainer = document.getElementById("matchContainer");
 
-  // Display matched dogs
+  const uniqueDogPairs = new Set();
+
   matchedArray.forEach(function (dog) {
     console.log("Matched Dog:", dog);
 
-    const dogDiv = document.createElement("div");
-    const dogImage = document.createElement("img");
-    const dogName = document.createElement("p");
+  
+    const dogPair = dog.name + dog.image_link;
+    if (!uniqueDogPairs.has(dogPair)) {
+      const dogDiv = document.createElement("div");
+      const dogImage = document.createElement("img");
+      const dogName = document.createElement("p");
 
-    dogImage.src = dog.image_link;
-    dogName.textContent = dog.name;
+      dogImage.src = dog.image_link;
+      dogName.textContent = dog.name;
 
-    dogDiv.appendChild(dogImage);
-    dogDiv.appendChild(dogName);
-    dogContainer.appendChild(dogDiv);
+      dogDiv.appendChild(dogImage);
+      dogDiv.appendChild(dogName);
+      dogContainer.appendChild(dogDiv);
+
+    
+      uniqueDogPairs.add(dogPair);
+    }
   });
 }
 
-// Call the function to display matched dogs
 displayMatchedDogs();
