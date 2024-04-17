@@ -16,10 +16,10 @@
     <div id="container">
     <img id= dogImg src="./assets/images/dogwoofing.png" alt="">
     
-    <section id="dogForm">   
-      <h1 id="dogFormTitle" class=" is-size-1 has-text-weight-bold">BarkHUB</h1>
-      <p>Fill out the form to be matched with the perfect dog for you! </p>
-      <label for="energy">Energy: </label>
+    <section id="dogForm" class="has-text-centered">   
+      <h1 id="dogFormTitle" class=" is-size-1 has-text-weight-bold has">BarkHUB</h1>
+      <p class="is-size-6 has-text-centered has-text-danger mb-5">Fill out the form to be matched with the perfect dog for you!  Possible values: 1, 2, 3, 4, 5, where 1 indicates minimal and 5 indicates maximum.</p>
+      <label for="energy" class="is-size-4">Energy: </label>
       <select id="energy">
          <option value="1">1</option>
         <option value="2">2</option>
@@ -28,7 +28,7 @@
         <option value="5">5</option></select
       ><br />
 
-      <label for="shedding">Shedding:</label>
+      <label for="shedding" class="is-size-4">Shedding:</label>
       <select id="shedding">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -37,7 +37,7 @@
         <option value="5">5</option></select
       ><br />
 
-      <label for="barking">Barking:</label>
+      <label for="barking" class="is-size-4">Barking:</label>
       <select id="barking">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -46,7 +46,7 @@
         <option value="5">5</option></select
       ><br />
 
-      <label for="protectiveness">Protectiveness:</label>
+      <label for="protectiveness" class="is-size-4">Protectiveness:</label>
       <select id="protectiveness">
         <option value="1">1</option>
         <option value="2">2</option>
@@ -56,9 +56,11 @@
       ><br />
 
 
-      <label for="weight">Weight (lbs):</label>
+      <label for="weight" class="is-size-4">Weight (lbs):</label>
       <input type="number" id="weight" min="0" /><br /> 
-      <button id="matchButton">Match Me</button>
+      <div class="has-text-centered">
+        <button class= "button is-dark is-medium is-rounded mt-6" id="matchButton">Match Me</button>
+      </div>
 
 <div id="noDogsModal" class="modal">
   <div class="modal-background"></div>
@@ -72,7 +74,7 @@
 
     </section>
     
-    <div id="fact-text">
+    <!-- <div id="fact-text">
       <script>
         function fetchRandomDogFact() {
             fetch('https://dogapi.dog/api/v1/facts?number=1')
@@ -89,7 +91,7 @@
         window.onload = fetchRandomDogFact;
     </script>
     </div>
-   
+    -->
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
