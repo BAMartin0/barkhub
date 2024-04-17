@@ -19,7 +19,14 @@ function fetchDogs() {
         var result = JSON.parse(xhr.responseText);
         console.log(result);
         if (result.length === 0) {
-          alert("Nah B guess again");
+          const modal = document.getElementById('noDogsModal');
+          modal.classList.add('is-active')
+
+          document.getElementById("tryAgainButton").addEventListener("click", function () {
+            var modal = document.getElementById('noDogsModal');
+            modal.classList.remove('is-active');
+          });
+            
         } else {
           const randomIndex = Math.floor(Math.random() * result.length);
           const randomResult = result[randomIndex];
@@ -44,5 +51,6 @@ function fetchDogs() {
       }
     }
   };
-    xhr.send();
+  xhr.send();
 }
+
