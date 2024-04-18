@@ -39,11 +39,10 @@ BarkHub is designed for anyone looking to find the perfect dog breed for their l
 
 BarkHub is developed and maintained by Team BarkHUB. https://bamartin0.github.io/barkhub/
 
-
-https://github.com/NikoMayz  -  Michael Young
-https://github.com/BAMartin0 - Brittany Martin
-https://github.com/ckdavis14 - Chris Davis
-https://github.com/Orrndrea  -  Orrndrea Jones
+     https://github.com/Orrndrea  -  Orrndrea Jones
+     https://github.com/BAMartin0 - Brittany Martin
+     https://github.com/ckdavis14 - Chris Davis
+     https://github.com/NikoMayz  -  Michael Young
 
 
 
