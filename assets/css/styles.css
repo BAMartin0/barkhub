@@ -5,80 +5,14 @@
 
 body {
   background-color: black;
+  min-height: 100vh;
 }
 
-#container {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 22px;
-  background-color: white;
-  display: flex;
-  padding: 50px;
-  margin: 0 auto;
-  width: 80%;
-  height: 90%;
-  border: 10px rgb(234, 14, 54) solid;
-  border-radius: 30px;
-}
 #dogImg {
   flex-basis: 50%;
   border-radius: 30px;
 }
 
-#dogForm {
-  margin-left: 30px;
-  line-height: 2;
-  flex-basis: 50%;
-  /* background-color: red; */
-  /* color: white;  */
-  border-radius: 30px;
-}
-
-#dogFormTitle {
-  font-size: 50px;
-  text-align: center;
-}
-
-@media screen and (max-width: 992px) {
-  #dogImg {
-    width: 50%;
-    height: 50%;
-  }
-  #dogForm {
-    display: inline;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  #dogImg {
-    display: inline;
-    width: 25%;
-    height: 25%;
-   
-  }
-  #dogForm {
-    display: inline;
-    float: left;
-    width: 25%;
-    height: 25%;
-    position: relative;
-  }
-}
-@media screen and (max-width: 559px) {
-  #dogImg {
-    width: 208px;
-    height: 218px;
-  }
-  #dogForm {
-    position: relative;
-  right: 200px;
-  top: 10px;
-  width: 250px;
-  }
-}
-
-/* match.html styling start */
 
 .header-container {
   background-color: black;
@@ -101,7 +35,7 @@ body {
   margin: 0 auto;
   width: 80%;
   height: 90%;
-  border: 10px rgb(234, 14, 54) solid;
+  border: 8px rgb(228, 217, 219) solid;
   border-radius: 30px;
 }
 

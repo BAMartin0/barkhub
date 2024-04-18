@@ -12,102 +12,106 @@
   </head>
   
   <body>
-    
-    <div id="container">
-    <img id= dogImg src="./assets/images/dogwoofing.png" alt="">
-    
-    <section id="dogForm" class="has-text-centered">   
-      <h1 id="dogFormTitle" class=" is-size-1 has-text-weight-bold has">BarkHUB</h1>
-      <p class="is-size-6 has-text-centered has-text-danger mb-5">Fill out the form to be matched with the perfect dog for you!  Possible values: 1, 2, 3, 4, 5, where 1 indicates minimal and 5 indicates maximum.</p>
-      <label for="energy" class="is-size-4">Energy: </label>
-      <select id="energy">
-         <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option></select
-      ><br />
-
-      <label for="shedding" class="is-size-4">Shedding:</label>
-      <select id="shedding">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option></select
-      ><br />
-
-      <label for="barking" class="is-size-4">Barking:</label>
-      <select id="barking">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option></select
-      ><br />
-
-      <label for="protectiveness" class="is-size-4">Protectiveness:</label>
-      <select id="protectiveness">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option></select
-      ><br />
-
-
-      <label for="weight" class="is-size-4">Weight (lbs):</label>
-      <input type="number" id="weight" min="0" /><br /> 
-      <div class="has-text-centered">
-        <button class= "button is-dark is-medium is-rounded mt-6" id="matchButton">Match Me</button>
+    <div class="container">
+      <div id="container" class="columns is-multiline">
+      <div class="column is-12-mobile is-6-desktop">
+        <img id= dogImg src="./assets/images/dogwoofing.png" alt="">
       </div>
+      <!-- Dog form with parameters -->
 
-<div id="noDogsModal" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <div class="box">
-      <p>No dogs found. Please edit your selections and try again.</p>
-      <button id= "tryAgainButton" class="button is-info">Try Again</button>
+      <section id="dogForm" class="has-text-centered column is-6-desktop is-12-mobile">   
+        <h1 class="has-text-danger is-size-1 has-text-weight-bold">Bark<span class="highlight">HUB</span></h1>
+        <p class="is-size-6 has-text-centered has-text-dark mb-5">Fill out the form to be matched with the perfect dog for you!  Possible values: 1, 2, 3, 4, 5, where 1 indicates minimal and 5 indicates maximum.</p>
+        <label for="energy" class="is-size-4">Energy: </label>
+        <select id="energy">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option></select
+        ><br />
+
+        <label for="shedding" class="is-size-4">Shedding:</label>
+        <select id="shedding">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option></select
+        ><br />
+
+        <label for="barking" class="is-size-4">Barking:</label>
+        <select id="barking">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option></select
+        ><br />
+
+        <label for="protectiveness" class="is-size-4">Protectiveness:</label>
+        <select id="protectiveness">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option></select
+        ><br />
+
+
+        <label for="weight" class="is-size-4">Weight (lbs):</label>
+        <input type="number" id="weight" min="0" /><br /> 
+        <div class="has-text-centered">
+          <button class= "button is-primary is-medium is-rounded mt-6" id="matchButton">Match Me</button>
+        </div>
+
+        <!--Modal that is set to inactive until clicked and activated in JS  -->
+        <div id="noDogsModal" class="modal">
+        <div class="modal-background"></div>
+          <div class="modal-content">
+          <div class="box">
+              <p>Nah B, try again.</p>
+              <button id= "tryAgainButton" class="button is-info">Try Again</button>
+        </div>
+          </div>
+        </div>
+
+      </section>
     </div>
-  </div>
-</div>
-
-    </section>
-    
-
-<div id="fact-text" class="message bottom-fixed">
-    <div class="message-header">
-        <p class="is-pulled-left">Did you know?</p>
+    <!--Fact API-->
+    <div id="fact-text" class="message bottom-fixed is-black">
+       <div class="message-header">
+            <p class="is-pulled-left">Did you know?</p>
+        </div>
+        <div class="message-body" id="fact-text-body">
+        </div>
     </div>
-    <div class="message-body" id="fact-text-body">
-    </div>
-</div>
 
-<script>
-    function fetchRandomDogFact() {
-        fetch('https://dogapi.dog/api/v1/facts?number=1')
-        .then(response => response.json())
-        .then(data => {
-            // Update the content of the message body
-            const factTextBody = document.getElementById('fact-text-body');
-            factTextBody.innerHTML = `
-                <div class="content">
-                    <p>${data.facts[0]}</p>
-                </div>`;
-        })
-        .catch(error => {
-            console.error('Error fetching random dog fact:', error);
-            // Update the content of the message body in case of an error
-            document.getElementById('fact-text-body').innerHTML = `
-                <div class="content">
-                    <p>Failed to fetch the fact.</p>
-                </div>`;
-        });
-    }
+    <script>
+      function fetchRandomDogFact() {
+          fetch('https://dogapi.dog/api/v1/facts?number=1')
+          .then(response => response.json())
+          .then(data => {
+              // Update the content of the message body
+              const factTextBody = document.getElementById('fact-text-body');
+              factTextBody.innerHTML = `
+                  <div class="content">
+                      <p>${data.facts[0]}</p>
+                  </div>`;
+          })
+          .catch(error => {
+              console.error('Error fetching random dog fact:', error);
+              // Update the content of the message body in case of an error
+              document.getElementById('fact-text-body').innerHTML = `
+                  <div class="content">
+                      <p>Failed to fetch the fact.</p>
+                  </div>`;
+          });
+      }
 
-    // Call the function to fetch random dog fact when the page loads
-    window.onload = fetchRandomDogFact;
-</script>
+      // Call the function to fetch random dog fact when the page loads
+      window.onload = fetchRandomDogFact;
+    </script>
    
 
     <script
